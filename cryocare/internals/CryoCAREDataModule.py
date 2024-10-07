@@ -121,9 +121,9 @@ class CryoCARE_Dataset(tf.keras.utils.Sequence):
         
         # If no mask is specified, just create a one-mask
         if mask_path is None:
-            mask = np.ones(even.data.shape).astype(np.bool)
+            mask = np.ones(even.data.shape).astype(np.bool_)
         else:
-            mask = mrcfile.read(mask_path).astype(np.bool)
+            mask = mrcfile.read(mask_path).astype(np.bool_)
 
             assert even.data.shape == mask.data.shape, '{} and {} tomogram / mask have different shapes.'.format(even_path,
                                                                                                                  mask_path)
